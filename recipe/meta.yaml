@@ -1,3 +1,5 @@
+# DOUBLE CHECK THESE FOR EACH NEW RELEASE
+# greyskull doesn't seem to update them automatically from upstream
 {% set awscrt = "awscrt ==0.19.18" %}
 {% set colorama = "colorama >=0.2.5,<0.4.7" %}
 {% set cryptography = "cryptography >=3.3.2,<=40.0.2" %}
