@@ -1,5 +1,5 @@
 {% set name = "awscli" %}
-{% set version = "2.15.50" %}
+{% set version = "2.15.51" %}
 
 package:
   name: {{ name|lower }}
@@ -8,10 +8,10 @@ package:
 # v2 is not on PyPI https://github.com/aws/aws-cli/issues/6785
 source:
   url: https://github.com/aws/aws-cli/archive/{{ version }}.tar.gz
-  sha256: 7c5ffcbae6b1299adbdeb1113e9996d1e1a8352b4bfd9b09d916fda42111f152
+  sha256: ac4908c89f0a53974138387e9e88bbe4cc4535bc1e30a9e53b69962cc12a8d76
 
 build:
-  number: 1
+  number: 0
   # Build uses pep517 with a custom backend
   # console_scripts entrypoints aren't used, so this can't be noarch
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv  # [not unix]
