@@ -1,18 +1,5 @@
-# DOUBLE CHECK THESE FOR EACH NEW RELEASE
-# greyskull doesn't seem to update them automatically from upstream
-{% set awscrt = "awscrt >=0.19.18,<=0.19.19" %}
-{% set colorama = "colorama >=0.2.5,<0.4.7" %}
-{% set cryptography = "cryptography >=3.3.2,<=40.0.2" %}
-{% set distro = "distro >=1.5.0,<1.9.0" %}
-{% set docutils = "docutils >=0.10,<0.20" %}
-{% set jmespath = "jmespath >=0.7.1,<1.1.0" %}
-{% set prompt_toolkit = "prompt_toolkit >=3.0.24,<3.0.39" %}
-{% set python_dateutil = "python-dateutil >=2.1,<=2.8.2" %}
-{% set ruamel_yaml = "ruamel.yaml >=0.15.0,<=0.17.21" %}
-{% set ruamel_yaml_clib = "ruamel.yaml.clib >=0.2.0,<=0.2.7" %}
-{% set urllib3 = "urllib3 >=1.25.4,<1.27" %}
 {% set name = "awscli" %}
-{% set version = "2.15.48" %}
+{% set version = "2.17.10" %}
 
 package:
   name: {{ name|lower }}
@@ -21,7 +8,7 @@ package:
 # v2 is not on PyPI https://github.com/aws/aws-cli/issues/6785
 source:
   url: https://github.com/aws/aws-cli/archive/{{ version }}.tar.gz
-  sha256: fd47c888ff8807801db8372d8a114fccd5860252f33dfd96edf5e624a47c8810
+  sha256: 2ff3a34c6bdeb10abb53796fcf95c01425d077f398d04423803252d5218144b9
 
 build:
   number: 1
@@ -35,17 +22,18 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     # The autocomplete index step is run on the build host
-    - {{ colorama }}                         # [build_platform != target_platform]
-    - {{ docutils }}                         # [build_platform != target_platform]
-    - {{ cryptography }}                     # [build_platform != target_platform]
-    - {{ ruamel_yaml }}                      # [build_platform != target_platform]
-    - {{ ruamel_yaml_clib }}                 # [build_platform != target_platform]
-    - {{ prompt_toolkit }}                   # [build_platform != target_platform]
-    - {{ distro }}                           # [build_platform != target_platform]
-    - {{ awscrt }}                           # [build_platform != target_platform]
-    - {{ python_dateutil }}                  # [build_platform != target_platform]
-    - {{ jmespath }}                         # [build_platform != target_platform]
-    - {{ urllib3 }}                          # [build_platform != target_platform]
+    # keep these in sync with host and run copies
+    - colorama >=0.2.5,<0.4.7                # [build_platform != target_platform]
+    - docutils >=0.10,<0.20                  # [build_platform != target_platform]
+    - cryptography >=3.3.2,<=40.0.2          # [build_platform != target_platform]
+    - ruamel.yaml >=0.15.0,<=0.17.21         # [build_platform != target_platform]
+    - ruamel.yaml.clib >=0.2.0,<=0.2.7       # [build_platform != target_platform]
+    - prompt_toolkit >=3.0.24,<3.0.39        # [build_platform != target_platform]
+    - distro >=1.5.0,<1.9.0                  # [build_platform != target_platform]
+    - awscrt >=0.19.18,<=0.20.11             # [build_platform != target_platform]
+    - python-dateutil >=2.1,<=2.8.2          # [build_platform != target_platform]
+    - jmespath >=0.7.1,<1.1.0                # [build_platform != target_platform]
+    - urllib3 >=1.25.4,<1.27                 # [build_platform != target_platform]
 
   host:
     - python
@@ -55,33 +43,33 @@ requirements:
     # which requires importing awscli modules, so we need to install all runtime
     # dependencies too. YAML anchors don't support merging lists so we have to
     # duplicate everything :-(
-    - {{ colorama }}
-    - {{ docutils }}
-    - {{ cryptography }}
-    - {{ ruamel_yaml }}
-    - {{ ruamel_yaml_clib }}
-    - {{ prompt_toolkit }}
-    - {{ distro }}
-    - {{ awscrt }}
-    - {{ python_dateutil }}
-    - {{ jmespath }}
-    - {{ urllib3 }}
+    - colorama >=0.2.5,<0.4.7
+    - docutils >=0.10,<0.20
+    - cryptography >=3.3.2,<=40.0.2
+    - ruamel.yaml >=0.15.0,<=0.17.21
+    - ruamel.yaml.clib >=0.2.0,<=0.2.7
+    - prompt_toolkit >=3.0.24,<3.0.39
+    - distro >=1.5.0,<1.9.0
+    - awscrt >=0.19.18,<=0.20.11
+    - python-dateutil >=2.1,<=2.8.2
+    - jmespath >=0.7.1,<1.1.0
+    - urllib3 >=1.25.4,<1.27
     # See https://github.com/aws/aws-cli/issues/7942
     - pyopenssl <23.2
 
   run:
     - python
-    - {{ colorama }}
-    - {{ docutils }}
-    - {{ cryptography }}
-    - {{ ruamel_yaml }}
-    - {{ ruamel_yaml_clib }}
-    - {{ prompt_toolkit }}
-    - {{ distro }}
-    - {{ awscrt }}
-    - {{ python_dateutil }}
-    - {{ jmespath }}
-    - {{ urllib3 }}
+    - colorama >=0.2.5,<0.4.7
+    - docutils >=0.10,<0.20
+    - cryptography >=3.3.2,<=40.0.2
+    - ruamel.yaml >=0.15.0,<=0.17.21
+    - ruamel.yaml.clib >=0.2.0,<=0.2.7
+    - prompt_toolkit >=3.0.24,<3.0.39
+    - distro >=1.5.0,<1.9.0
+    - awscrt >=0.19.18,<=0.20.11
+    - python-dateutil >=2.1,<=2.8.2
+    - jmespath >=0.7.1,<1.1.0
+    - urllib3 >=1.25.4,<1.27
     # See https://github.com/aws/aws-cli/issues/7942
     - pyopenssl <23.2
 
