@@ -30,7 +30,7 @@ requirements:
     - ruamel.yaml.clib >=0.2.0,<=0.2.7       # [build_platform != target_platform]
     - prompt_toolkit >=3.0.24,<3.0.39        # [build_platform != target_platform]
     - distro >=1.5.0,<1.9.0                  # [build_platform != target_platform]
-    - awscrt >=0.19.18,<=0.20.11             # [build_platform != target_platform]
+    - awscrt >=0.19.18,<=0.21.2              # [build_platform != target_platform]
     - python-dateutil >=2.1,<=2.8.2          # [build_platform != target_platform]
     - jmespath >=0.7.1,<1.1.0                # [build_platform != target_platform]
     - urllib3 >=1.25.4,<1.27                 # [build_platform != target_platform]
@@ -50,7 +50,7 @@ requirements:
     - ruamel.yaml.clib >=0.2.0,<=0.2.7
     - prompt_toolkit >=3.0.24,<3.0.39
     - distro >=1.5.0,<1.9.0
-    - awscrt >=0.19.18,<=0.20.11
+    - awscrt >=0.19.18,<=0.21.2
     - python-dateutil >=2.1,<=2.8.2
     - jmespath >=0.7.1,<1.1.0
     - urllib3 >=1.25.4,<1.27
@@ -66,7 +66,7 @@ requirements:
     - ruamel.yaml.clib >=0.2.0,<=0.2.7
     - prompt_toolkit >=3.0.24,<3.0.39
     - distro >=1.5.0,<1.9.0
-    - awscrt >=0.19.18,<=0.20.11
+    - awscrt >=0.19.18,<=0.21.2
     - python-dateutil >=2.1,<=2.8.2
     - jmespath >=0.7.1,<1.1.0
     - urllib3 >=1.25.4,<1.27
