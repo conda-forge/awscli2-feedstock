@@ -1,5 +1,5 @@
 {% set name = "awscli" %}
-{% set version = "2.18.6" %}
+{% set version = "2.18.7" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 # v2 is not on PyPI https://github.com/aws/aws-cli/issues/6785
 source:
   url: https://github.com/aws/aws-cli/archive/{{ version }}.tar.gz
-  sha256: 8dc42b014795a352d54bbb28af4f8aee0a255660fda15a74e551ed6da69531a5
+  sha256: a043bcc870ba960a5bfa7c638a03921878db20f6b4cc6d5ed5f52d47f761e11c
 
 build:
   number: 0
@@ -30,7 +30,7 @@ requirements:
     - ruamel.yaml.clib >=0.2.0,<=0.2.8       # [build_platform != target_platform]
     - prompt_toolkit >=3.0.24,<3.0.39        # [build_platform != target_platform]
     - distro >=1.5.0,<1.9.0                  # [build_platform != target_platform]
-    - awscrt >=0.19.18,<=0.21.2              # [build_platform != target_platform]
+    - awscrt >=0.19.18,<=0.22.0              # [build_platform != target_platform]
     - python-dateutil >=2.1,<=2.9.0          # [build_platform != target_platform]
     - jmespath >=0.7.1,<1.1.0                # [build_platform != target_platform]
     - urllib3 >=1.25.4,<1.27                 # [build_platform != target_platform]
@@ -50,7 +50,7 @@ requirements:
     - ruamel.yaml.clib >=0.2.0,<=0.2.8
     - prompt_toolkit >=3.0.24,<3.0.39
     - distro >=1.5.0,<1.9.0
-    - awscrt >=0.19.18,<=0.21.2
+    - awscrt >=0.19.18,<=0.22.0
     - python-dateutil >=2.1,<=2.9.0
     - jmespath >=0.7.1,<1.1.0
     - urllib3 >=1.25.4,<1.27
@@ -64,7 +64,7 @@ requirements:
     - ruamel.yaml.clib >=0.2.0,<=0.2.8
     - prompt_toolkit >=3.0.24,<3.0.39
     - distro >=1.5.0,<1.9.0
-    - awscrt >=0.19.18,<=0.21.2
+    - awscrt >=0.19.18,<=0.22.0
     - python-dateutil >=2.1,<=2.9.0
     - jmespath >=0.7.1,<1.1.0
     - urllib3 >=1.25.4,<1.27
