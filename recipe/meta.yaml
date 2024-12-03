@@ -11,11 +11,12 @@ source:
   sha256: 5e6b193695853d11e08d881519032979fa1b926942319c85196020cbf9534bb4
 
 build:
-  number: 0
+  number: 1
   # Build uses pep517 with a custom backend
   # console_scripts entrypoints aren't used, so this can't be noarch
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv  # [not unix]
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv && mkdir -p $PREFIX/share/bash-completions/completions && echo complete -C aws_completer aws >$PREFIX/share/bash-completions/completions/aws  # [unix]
+  script:
+    - {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
+    - mkdir -p $PREFIX/share/bash-completions/completions && echo complete -C aws_completer aws >$PREFIX/share/bash-completions/completions/aws  # [unix]
 
 requirements:
   build:
