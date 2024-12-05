@@ -1,5 +1,5 @@
 {% set name = "awscli" %}
-{% set version = "2.22.11" %}
+{% set version = "2.22.12" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 # v2 is not on PyPI https://github.com/aws/aws-cli/issues/6785
 source:
   url: https://github.com/aws/aws-cli/archive/{{ version }}.tar.gz
-  sha256: 5d7bc57cce6050b6517346d7cd670d11559de124e278b5c0411ab21d81b5da9c
+  sha256: b2171f22b69bad4ac1abbed10b85f5cba6692216888baf8907894f5c57606673
 
 build:
   number: 0
