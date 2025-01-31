@@ -1,5 +1,5 @@
 {% set name = "awscli" %}
-{% set version = "2.23.9" %}
+{% set version = "2.23.10" %}
 
 package:
   name: {{ name|lower }}
@@ -8,10 +8,10 @@ package:
 # v2 is not on PyPI https://github.com/aws/aws-cli/issues/6785
 source:
   url: https://github.com/aws/aws-cli/archive/{{ version }}.tar.gz
-  sha256: 22826f23f4a7683dff2f1d22c1b6a0fe2005dfeedb5210a5be17013afeb583e0
+  sha256: 44daed0a1337620fe1447674c3a8711928827c513a9723fba269831ddedc58c1
 
 build:
-  number: 1
+  number: 0
   # Build uses pep517 with a custom backend
   # console_scripts entrypoints aren't used, so this can't be noarch
   script:
@@ -59,6 +59,7 @@ requirements:
     - zipp <3.21.0
 
   run:
+    - prompt-toolkit >=3.0.24,<3.0.39
     - python
     - colorama >=0.2.5,<0.4.7
     - docutils >=0.10,<0.20
@@ -67,7 +68,7 @@ requirements:
     - ruamel.yaml.clib >=0.2.0,<=0.2.8
     - prompt_toolkit >=3.0.24,<3.0.39
     - distro >=1.5.0,<1.9.0
-    - awscrt ==0.23.4
+    - awscrt ==0.23.8
     - python-dateutil >=2.1,<=2.9.0
     - jmespath >=0.7.1,<1.1.0
     - urllib3 >=1.25.4,<1.27
