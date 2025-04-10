@@ -21,6 +21,7 @@ build:
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
+    #- python >=3.9                           # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     # The autocomplete index step is run on the build host
     # keep these in sync with host and run copies
@@ -38,6 +39,7 @@ requirements:
 
   host:
     - python
+    #- python >=3.9
     - flit-core ==3.9.0
     - pip
     # The build process generates the autocomplete index (scripts/gen-ac-index)
@@ -58,6 +60,7 @@ requirements:
 
   run:
     - python
+    #- python >=3.9
     - colorama >=0.2.5,<0.4.7
     - docutils >=0.10,<0.20
     - cryptography >=40.0.0,<43.0.2
