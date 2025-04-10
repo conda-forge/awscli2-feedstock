@@ -1,5 +1,5 @@
 {% set name = "awscli" %}
-{% set version = "2.25.14" %}
+{% set version = "2.26.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 # v2 is not on PyPI https://github.com/aws/aws-cli/issues/6785
 source:
   url: https://github.com/aws/aws-cli/archive/{{ version }}.tar.gz
-  sha256: c1a2bdd9479f2e7432e67fa837095532e29aadf27a0c35de2be36a803e394433
+  sha256: 5f4982170d7be8b25d95e1f255786fdd8d0bea64421f378759dea4394735e338
 
 build:
   number: 0
@@ -64,7 +64,7 @@ requirements:
     - docutils >=0.10,<0.20
     - cryptography >=40.0.0,<43.0.2
     - ruamel.yaml >=0.15.0,<=0.17.21
-    - ruamel.yaml.clib >=0.2.0,<=0.2.8
+    - ruamel.yaml.clib >=0.2.0,<=0.2.12
     - prompt-toolkit >=3.0.24,<3.0.39
     - distro >=1.5.0,<1.9.0
     - awscrt ==0.25.4
