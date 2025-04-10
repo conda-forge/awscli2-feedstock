@@ -28,14 +28,13 @@ requirements:
     - docutils >=0.10,<0.20                  # [build_platform != target_platform]
     - cryptography >=40.0.0,<43.0.2          # [build_platform != target_platform]
     - ruamel.yaml >=0.15.0,<=0.17.21         # [build_platform != target_platform]
-    - ruamel.yaml.clib >=0.2.0,<=0.2.8       # [build_platform != target_platform]
+    - ruamel.yaml.clib >=0.2.0,<=0.2.12      # [build_platform != target_platform]
     - prompt-toolkit >=3.0.24,<3.0.39        # [build_platform != target_platform]
     - distro >=1.5.0,<1.9.0                  # [build_platform != target_platform]
     - awscrt ==0.25.4                        # [build_platform != target_platform]
     - python-dateutil >=2.1,<=2.9.0          # [build_platform != target_platform]
     - jmespath >=0.7.1,<1.1.0                # [build_platform != target_platform]
     - urllib3 >=1.25.4,<1.27                 # [build_platform != target_platform]
-    - zipp <3.21.0                           # [build_platform != target_platform]
 
   host:
     - python
@@ -49,14 +48,13 @@ requirements:
     - docutils >=0.10,<0.20
     - cryptography >=40.0.0,<43.0.2
     - ruamel.yaml >=0.15.0,<=0.17.21
-    - ruamel.yaml.clib >=0.2.0,<=0.2.8
+    - ruamel.yaml.clib >=0.2.0,<=0.2.12
     - prompt-toolkit >=3.0.24,<3.0.39
     - distro >=1.5.0,<1.9.0
     - awscrt ==0.25.4
     - python-dateutil >=2.1,<=2.9.0
     - jmespath >=0.7.1,<1.1.0
     - urllib3 >=1.25.4,<1.27
-    - zipp <3.21.0
 
   run:
     - python
@@ -71,7 +69,6 @@ requirements:
     - python-dateutil >=2.1,<=2.9.0
     - jmespath >=0.7.1,<1.1.0
     - urllib3 >=1.25.4,<1.27
-    - zipp <3.21.0
 
 test:
   imports:
