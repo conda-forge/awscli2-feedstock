@@ -27,7 +27,6 @@ requirements:
     # keep these in sync with host and run copies
     - colorama >=0.2.5,<0.4.7                # [build_platform != target_platform]
     - docutils >=0.10,<0.20                  # [build_platform != target_platform]
-    - cryptography >=40.0.0,<43.0.2          # [build_platform != target_platform]
     - ruamel.yaml >=0.15.0,<=0.17.21         # [build_platform != target_platform]
     - ruamel.yaml.clib >=0.2.0,<=0.2.12      # [build_platform != target_platform]
     - prompt-toolkit >=3.0.24,<3.0.39        # [build_platform != target_platform]
@@ -48,7 +47,6 @@ requirements:
     # duplicate everything :-(
     - colorama >=0.2.5,<0.4.7
     - docutils >=0.10,<0.20
-    - cryptography >=40.0.0,<43.0.2
     - ruamel.yaml >=0.15.0,<=0.17.21
     - ruamel.yaml.clib >=0.2.0,<=0.2.12
     - prompt-toolkit >=3.0.24,<3.0.39
@@ -63,7 +61,6 @@ requirements:
     #- python >=3.9
     - colorama >=0.2.5,<0.4.7
     - docutils >=0.10,<0.20
-    - cryptography >=40.0.0,<43.0.2
     - ruamel.yaml >=0.15.0,<=0.17.21
     - ruamel.yaml.clib >=0.2.0,<=0.2.12
     - prompt-toolkit >=3.0.24,<3.0.39
