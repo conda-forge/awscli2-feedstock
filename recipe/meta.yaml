@@ -29,7 +29,7 @@ requirements:
     - docutils >=0.10,<0.20                  # [build_platform != target_platform]
     - ruamel.yaml >=0.15.0,<=0.17.21         # [build_platform != target_platform]
     - ruamel.yaml.clib >=0.2.0,<=0.2.12      # [build_platform != target_platform]
-    - prompt-toolkit >=3.0.24,<3.0.39        # [build_platform != target_platform]
+    - prompt-toolkit >=3.0.24,<3.0.52        # [build_platform != target_platform]
     - distro >=1.5.0,<1.9.0                  # [build_platform != target_platform]
     - awscrt ==0.26.1                        # [build_platform != target_platform]
     - python-dateutil >=2.1,<=2.9.0          # [build_platform != target_platform]
@@ -49,7 +49,7 @@ requirements:
     - docutils >=0.10,<0.20
     - ruamel.yaml >=0.15.0,<=0.17.21
     - ruamel.yaml.clib >=0.2.0,<=0.2.12
-    - prompt-toolkit >=3.0.24,<3.0.39
+    - prompt-toolkit >=3.0.24,<3.0.52
     - distro >=1.5.0,<1.9.0
     - awscrt ==0.26.1
     - python-dateutil >=2.1,<=2.9.0
