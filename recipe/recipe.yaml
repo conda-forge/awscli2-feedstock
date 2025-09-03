@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: awscli
-  version: 2.28.22
+  version: "2.28.22"
 
 package:
   name: ${{ name|lower }}
@@ -14,7 +14,7 @@ source:
   sha256: 619c63f898eb672740a726e0b1d04bef55e9424e67feb29609ebdc52deb252e0
 
 build:
-  number: 1
+  number: 2
   # Build uses pep517 with a custom backend
   # console_scripts entrypoints aren't used, so this can't be noarch
   script:
@@ -25,32 +25,22 @@ build:
 requirements:
   build:
     - if: build_platform != target_platform
-      then: python
-    #- python >=3.9                           # [build_platform != target_platform]
-    - if: build_platform != target_platform
-      then: cross-python_${{ target_platform }}
-    # The autocomplete index step is run on the build host
-    # keep these in sync with host and run copies
-    - if: build_platform != target_platform
-      then: colorama >=0.2.5,<0.4.7
-    - if: build_platform != target_platform
-      then: docutils >=0.10,<0.20
-    - if: build_platform != target_platform
-      then: ruamel.yaml >=0.15.0,<=0.17.21
-    - if: build_platform != target_platform
-      then: ruamel.yaml.clib >=0.2.0,<=0.2.12
-    - if: build_platform != target_platform
-      then: prompt-toolkit >=3.0.24,<3.0.52
-    - if: build_platform != target_platform
-      then: distro >=1.5.0,<1.9.0
-    - if: build_platform != target_platform
-      then: awscrt ==0.27.5
-    - if: build_platform != target_platform
-      then: python-dateutil >=2.1,<=2.9.0
-    - if: build_platform != target_platform
-      then: jmespath >=0.7.1,<1.1.0
-    - if: build_platform != target_platform
-      then: urllib3 >=1.25.4,<1.27
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+        #- python >=3.9                           # [build_platform != target_platform]
+        # The autocomplete index step is run on the build host
+        # keep these in sync with host and run copies
+        - colorama >=0.2.5,<0.4.7
+        - docutils >=0.10,<0.20
+        - ruamel.yaml >=0.15.0,<=0.17.21
+        - ruamel.yaml.clib >=0.2.0,<=0.2.12
+        - prompt-toolkit >=3.0.24,<3.0.52
+        - distro >=1.5.0,<1.9.0
+        - awscrt ==0.27.5
+        - python-dateutil >=2.1,<=2.9.0
+        - jmespath >=0.7.1,<1.1.0
+        - urllib3 >=1.25.4,<1.27
 
   host:
     - python
@@ -137,12 +127,12 @@ tests:
         - awscli.customizations.wizard.ui
         - awscli.s3transfer
   - script:
-    - aws --version
-    - aws_completer
-    # Check autocomplete index exists:
-    - python -c "import awscli, os; assert os.stat(os.path.join(os.path.dirname(awscli.__file__), 'data', 'ac.index')).st_size > 1e6"
-    - if: unix
-      then: COMP_LINE="aws ec2 describe-inst" aws_completer
+      - aws --version
+      - aws_completer
+      # Check autocomplete index exists:
+      - python -c "import awscli, os; assert os.stat(os.path.join(os.path.dirname(awscli.__file__), 'data', 'ac.index')).st_size > 1e6"
+      - if: unix
+        then: COMP_LINE="aws ec2 describe-inst" aws_completer
 
 about:
   license_file: LICENSE.txt
