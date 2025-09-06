@@ -45,7 +45,10 @@ requirements:
   host:
     #- python >=3.9
     - python
-    - flit-core ==3.9.0
+    # temp test while waiting for https://github.com/aws/aws-cli/pull/9623 upstream
+    - if: match(python, "<=3.14")
+      then: flit-core ==3.9.0
+      else: flit-core ==3.10.0
     - pip
     # The build process generates the autocomplete index (scripts/gen-ac-index)
     # which requires importing awscli modules, so we need to install all runtime
