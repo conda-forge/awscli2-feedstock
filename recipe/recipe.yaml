@@ -46,7 +46,7 @@ requirements:
     #- python >=3.9
     - python
     # temp test while waiting for https://github.com/aws/aws-cli/pull/9623 upstream
-    - if: match(python, "<=3.14")
+    - if: match(python, "<3.14")
       then: flit-core ==3.9.0
       else: flit-core ==3.10.0
     - pip
