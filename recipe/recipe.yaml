@@ -14,7 +14,7 @@ source:
   sha256: 7aacc9f40c3ccb29a3eef08ec114ffeb52f78075dfdc17dddc97c677c7358650
 
 build:
-  number: 0
+  number: 1
   # Build uses pep517 with a custom backend
   # console_scripts entrypoints aren't used, so this can't be noarch
   script:
