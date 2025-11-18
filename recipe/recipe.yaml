@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: awscli
-  version: "2.31.38"
+  version: "2.31.39"
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 # v2 is not on PyPI https://github.com/aws/aws-cli/issues/6785
 source:
   url: https://github.com/aws/aws-cli/archive/${{ version }}.tar.gz
-  sha256: b8cbd2705b7237d5d49bdca2da008fff9d2028a26cfc247ac1fe28a650d24543
+  sha256: 37e8d8abcf70801b1343811a75666dd5f6c2ac559ea74458e845f9dadd9f6e36
 
 build:
   number: 0
