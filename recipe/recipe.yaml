@@ -21,6 +21,9 @@ build:
     - ${{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
     - if: unix
       then: mkdir -p $PREFIX/share/bash-completions/completions && echo complete -C aws_completer aws >$PREFIX/share/bash-completions/completions/aws
+  skip:
+    # delete this when https://github.com/aws/aws-cli/pull/9854 is released
+    - True and py < 312
 
 requirements:
   build:
