@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: awscli
-  version: "2.32.0"
+  version: "2.32.1"
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 # v2 is not on PyPI https://github.com/aws/aws-cli/issues/6785
 source:
   url: https://github.com/aws/aws-cli/archive/${{ version }}.tar.gz
-  sha256: 2bb6d44a472993f2269fa095d3a22b953e1a01aff13cc5659accf18caddec258
+  sha256: 0942b35fcab096ff8d0383a2809e915f9ebb59fa9f10fb5cc3a43bdd919d41ce
 
 build:
   number: 0
@@ -21,8 +21,6 @@ build:
     - ${{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
     - if: unix
       then: mkdir -p $PREFIX/share/bash-completions/completions && echo complete -C aws_completer aws >$PREFIX/share/bash-completions/completions/aws
-  # delete this when https://github.com/aws/aws-cli/pull/9854 is released
-  skip: match(python, "<3.12")
 
 requirements:
   build:
