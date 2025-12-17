@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: awscli
-  version: "2.32.18"
+  version: "2.32.19"
 
 package:
   name: ${{ name|lower }}
@@ -11,10 +11,10 @@ package:
 # v2 is not on PyPI https://github.com/aws/aws-cli/issues/6785
 source:
   url: https://github.com/aws/aws-cli/archive/${{ version }}.tar.gz
-  sha256: dc7b67c9d0ac8e51458c0e712f6bebc465e2ab1ea4babb15112ddbebc6c2a683
+  sha256: 9f16d09542332a1fc10be5b2b94fd03087b48e63e6067290b4ec084e5e4a84fd
 
 build:
-  number: 1
+  number: 0
   # Build uses pep517 with a custom backend
   # console_scripts entrypoints aren't used, so this can't be noarch
   script:
