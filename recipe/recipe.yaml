@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: awscli
-  version: "2.33.26"
+  version: 2.33.27
 
 package:
   name: ${{ name|lower }}
@@ -11,10 +11,10 @@ package:
 # v2 is not on PyPI https://github.com/aws/aws-cli/issues/6785
 source:
   url: https://github.com/aws/aws-cli/archive/${{ version }}.tar.gz
-  sha256: aa149a21e9a4e0f2a45fc3d8e7d9df5ed345861f7b9a7448d862f86047f831d3
+  sha256: 9a64bd87be31ce5c5f89cd848e56f72c881af12f91fc4a9e83e9a33349b66106
 
 build:
-  number: 1
+  number: 0
   # Build uses pep517 with a custom backend
   # console_scripts entrypoints aren't used, so this can't be noarch
   script:
@@ -37,7 +37,7 @@ requirements:
         - ruamel.yaml.clib >=0.2.0,<=0.2.12
         - prompt-toolkit >=3.0.24,<3.0.52
         - distro >=1.5.0,<1.9.0
-        - awscrt ==0.31.1
+        - awscrt ==0.31.2
         - python-dateutil >=2.1,<=2.9.0
         - jmespath >=0.7.1,<1.1.0
         - urllib3 >=1.25.4,<=2.6.3
@@ -58,7 +58,7 @@ requirements:
     - ruamel.yaml.clib >=0.2.0,<=0.2.12
     - prompt-toolkit >=3.0.24,<3.0.52
     - distro >=1.5.0,<1.9.0
-    - awscrt ==0.31.1
+    - awscrt ==0.31.2
     - python-dateutil >=2.1,<=2.9.0
     - jmespath >=0.7.1,<1.1.0
     - urllib3 >=1.25.4,<=2.6.3
@@ -73,7 +73,7 @@ requirements:
     - ruamel.yaml.clib >=0.2.0,<=0.2.12
     - prompt-toolkit >=3.0.24,<3.0.52
     - distro >=1.5.0,<1.9.0
-    - awscrt ==0.31.1
+    - awscrt ==0.31.2
     - python-dateutil >=2.1,<=2.9.0
     - jmespath >=0.7.1,<1.1.0
     - urllib3 >=1.25.4,<=2.6.3
