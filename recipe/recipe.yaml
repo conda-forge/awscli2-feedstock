@@ -33,8 +33,8 @@ requirements:
         # keep these in sync with host and run copies
         - colorama >=0.2.5,<0.4.7
         - docutils >=0.10,<0.20
-        - ruamel.yaml >=0.15.0,<=0.17.21
-        - ruamel.yaml.clib >=0.2.0,<=0.2.12
+        - ruamel.yaml >=0.15.0,<=0.19.1
+        - ruamel.yaml.clib >=0.2.0,<=0.2.15
         - prompt-toolkit >=3.0.24,<3.0.52
         - distro >=1.5.0,<1.9.0
         - awscrt ==0.31.2
@@ -46,7 +46,7 @@ requirements:
   host:
     #- python >=3.9
     - python
-    - flit-core ==3.9.0
+    - flit-core ==3.12.0
     - pip
     # The build process generates the autocomplete index (scripts/gen-ac-index)
     # which requires importing awscli modules, so we need to install all runtime
@@ -54,8 +54,8 @@ requirements:
     # duplicate everything :-(
     - colorama >=0.2.5,<0.4.7
     - docutils >=0.10,<0.20
-    - ruamel.yaml >=0.15.0,<=0.17.21
-    - ruamel.yaml.clib >=0.2.0,<=0.2.12
+    - ruamel.yaml >=0.15.0,<=0.19.1
+    - ruamel.yaml.clib >=0.2.0,<=0.2.15
     - prompt-toolkit >=3.0.24,<3.0.52
     - distro >=1.5.0,<1.9.0
     - awscrt ==0.31.2
@@ -69,6 +69,8 @@ requirements:
     - python
     - colorama >=0.2.5,<0.4.7
     - docutils >=0.10,<0.20
+    - ruamel.yaml >=0.15.0,<=0.19.1
+    - ruamel.yaml.clib >=0.2.0,<=0.2.15
     - prompt-toolkit >=3.0.24,<3.0.52
     - distro >=1.5.0,<1.9.0
     - awscrt ==0.31.2
@@ -76,8 +78,7 @@ requirements:
     - jmespath >=0.7.1,<1.1.0
     - urllib3 >=1.25.4,<=2.6.3
     - wcwidth <0.3.0
-    - ruamel_yaml_clib >=0.2.0,<=0.2.15
-    - ruamel_yaml >=0.15.0,<=0.19.1
+
 tests:
   - python:
       imports:
