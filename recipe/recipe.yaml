@@ -3,10 +3,9 @@ schema_version: 1
 context:
   name: awscli
   version: 2.34.14
-  # these need to be kept up to date by hand, grayskull gets confused by
-  # the underscores used upstream, and with them in a context variable
-  ruamel_yaml: ruamel.yaml >=0.15.0,<=0.19.1
-  ruamel_yaml_clib: ruamel.yaml.clib >=0.2.0,<=0.2.15
+  # grayskull gets confused by the underscores used upstream
+  ruamel_yaml: ruamel.yaml
+  ruamel_yaml_clib: ruamel.yaml.clib
 
 package:
   name: ${{ name|lower }}
@@ -18,7 +17,7 @@ source:
   sha256: cdf567fa1e3c7251a6ce0bbab87e09e9fd27e51357490a5096f936d1c0157b08
 
 build:
-  number: 0
+  number: 1
   # Build uses pep517 with a custom backend
   # console_scripts entrypoints aren't used, so this can't be noarch
   script:
@@ -37,8 +36,8 @@ requirements:
         # keep these in sync with host and run copies
         - colorama >=0.2.5,<0.4.7
         - docutils >=0.10,<0.20
-        - ${{ ruamel_yaml }}
-        - ${{ ruamel_yaml_clib }}
+        - ${{ ruamel_yaml }} >=0.15.0,<=0.19.1
+        - ${{ ruamel_yaml_clib }} >=0.2.0,<=0.2.15
         - prompt-toolkit >=3.0.24,<3.0.52
         - distro >=1.5.0,<1.9.0
         - awscrt ==0.31.2
@@ -58,8 +57,8 @@ requirements:
     # duplicate everything :-(
     - colorama >=0.2.5,<0.4.7
     - docutils >=0.10,<0.20
-    - ${{ ruamel_yaml }}
-    - ${{ ruamel_yaml_clib }}
+    - ${{ ruamel_yaml }} >=0.15.0,<=0.19.1
+    - ${{ ruamel_yaml_clib }} >=0.2.0,<=0.2.15
     - prompt-toolkit >=3.0.24,<3.0.52
     - distro >=1.5.0,<1.9.0
     - awscrt ==0.31.2
@@ -73,8 +72,8 @@ requirements:
     - python
     - colorama >=0.2.5,<0.4.7
     - docutils >=0.10,<0.20
-    - ${{ ruamel_yaml }}
-    - ${{ ruamel_yaml_clib }}
+    - ${{ ruamel_yaml }} >=0.15.0,<=0.19.1
+    - ${{ ruamel_yaml_clib }} >=0.2.0,<=0.2.15
     - prompt-toolkit >=3.0.24,<3.0.52
     - distro >=1.5.0,<1.9.0
     - awscrt ==0.31.2
