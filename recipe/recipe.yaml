@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: awscli
-  version: "2.36.2"
+  version: "2.36.3"
   # grayskull gets confused by the underscores used upstream
   ruamel_yaml: ruamel.yaml
   ruamel_yaml_clib: ruamel.yaml.clib
@@ -14,7 +14,7 @@ package:
 # v2 is not on PyPI https://github.com/aws/aws-cli/issues/6785
 source:
   url: https://github.com/aws/aws-cli/archive/${{ version }}.tar.gz
-  sha256: c9e8a6029318b960577acf1cbddb0255032fe943846f611e24f418c14c4b41bd
+  sha256: 700ca98f06aa3bb17296dc9df170cb3cb040d2228505fd81625bd8c08223c1e2
 
 build:
   number: 0
