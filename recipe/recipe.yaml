@@ -17,7 +17,7 @@ source:
   sha256: a29a77b9d3533ec9439897bad5d6961807c03706063c0c607be403e11deaa2a5
 
 build:
-  number: 0
+  number: 1
   # Build uses pep517 with a custom backend
   # console_scripts entrypoints aren't used, so this can't be noarch
   script:
@@ -43,7 +43,7 @@ requirements:
         - awscrt ==0.36.2
         - python-dateutil >=2.1,<=2.9.0
         - jmespath >=0.7.1,<1.1.0
-        - urllib3 >=1.25.4,<=2.6.3
+        - urllib3 >=1.25.4,<3
         - wcwidth <0.3.0
 
   host:
