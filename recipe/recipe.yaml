@@ -19,7 +19,7 @@ source:
 build:
   number: 1
   # https://github.com/conda-forge/awscrt-feedstock/issues/717
-  skip: python == "3.15" and ppc64le
+  skip: 'python == "3.15" and target_platform == "linux-ppc64le"'
   # Build uses pep517 with a custom backend
   # console_scripts entrypoints aren't used, so this can't be noarch
   script:
