@@ -1,7 +1,5 @@
 bot:
   inspection: hint-all
-build_platform:
-  linux_ppc64le: linux_64
 conda_build:
   error_overlinking: true
 conda_build_tool: rattler-build
